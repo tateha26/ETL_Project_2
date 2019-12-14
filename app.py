@@ -79,7 +79,7 @@ def index():
         passport_expiration = req['passport_expiration']
         employee_id = req['employee_id']
         date_hired = req['date_hired']
-        position = req['position']
+        position_type = req['position_type']
         primary_phone = req['primary_phone']
         primary_email = req['primary_email']
         secondary_email = req['secondary_email']
@@ -87,16 +87,16 @@ def index():
         manager = req['manager']
         oy2_po_code = req['oy2_po_code']
         oy2_org_code = req['oy2_org_code']
-        oy2projectstring = req['oy2projectstring']
-        plccode = req['plccode']
-        nok = req['nok']
-        fsde_sheet = req['fsde_sheet']
-        deployment_start = req['deployment_start']
-        deployment_end = req['deployment_end']
-        leave_start = req['leave_start']
-        leave_end = req['leave_end']
-        mil_leave_start = req['mil_leave_start']
-        mil_leave_end = req['mil_leave_end']
+        oy2_project_string = req['oy2_project_string']
+        plc_code = req['plc_code']
+        nok_date = req['nok_date']
+        fsde_sheet_date = req['fsde_sheet_date']
+        deployment_start_date = req['deployment_start_date']
+        deployment_end_date = req['deployment_end_date']
+        leave_start_date = req['leave_start_date']
+        leave_end_date = req['leave_end_date']
+        mil_leave_start_date = req['mil_leave_start_date']
+        mil_leave_end_date = req['mil_leave_end_date']
         
         ditac = req['ditac']
         sis = req['sis']
@@ -139,9 +139,78 @@ def index():
             'estimate_balance':estimate_balance
         }
 
+        traveler_dict = {
+            'client_poc':client_poc,
+            'id_project_mgr':id_project_mgr,
+            'travel_justification':travel_justification,
+            'first_name':first_name,
+            'middle_name':middle_name,
+            'last_name':last_name,
+            'company':company,
+            'sub_company_poc_name':sub_company_poc_name,
+            'sub_company_address':sub_company_address,
+            'sub_company_city':sub_company_city,
+            'sub_company_phone':sub_company_phone,
+            'sub_company_email':sub_company_email,
+            'sub_company_po':sub_company_po,
+        }
+
+        employee_dict = {
+            'birth_date':birth_date,
+            'place_of_birth':place_of_birth,
+            'ssn':ssn,
+            'dod_id':dod_id,
+            'passport_no':passport_no,
+            'passport_expiration':passport_expiration,
+            'employee_id':employee_id,
+            'date_hired':date_hired,
+            'position_type':position_type,
+            'primary_phone':primary_phone,
+            'primary_email':primary_email,
+            'secondary_email':secondary_email,
+            'task_id':task_id,
+            'manager':manager,
+            'oy2_po_code':oy2_po_code,
+            'oy2_org_code':oy2_org_code,
+            'oy2_project_string':oy2_project_string,
+            'plc_code':plc_code,
+            'nok_date':nok_date,
+            'fsde_sheet_date':fsde_sheet_date,
+            'deployment_start_date':deployment_start_date,
+            'deployment_end_date':deployment_end_date,
+            'leave_start_date':leave_start_date,
+            'leave_end_date':leave_end_date,
+            'mil_leave_start_date':mil_leave_start_date,
+            'mil_leave_end_date':mil_leave_end_date
+        }
+
+        training_dict = {
+            'ditac':ditac,
+            'sis':sis,
+            'ftp':ftp,
+            'jasa':jasa,
+            'dst_osint':dst_osint,
+            'proton':proton,
+            'fmv_academy':fmv_academy
+        }
+
+        task_dict = {
+            'ccmsubmit':ccmsubmit,
+            'ci_brief':ci_brief,
+            'visa_submitted':visa_submitted,
+            'src_date':src_date,
+            'src_travel_submission':src_travel_submission,
+            'deployment_travel_submission':deployment_travel_submission
+        }
+
+
         tables = [
             client_dict,
-            tpoc_dict
+            tpoc_dict,
+            traveler_dict,
+            employee_dict,
+            training_dict,
+            task_dict
         ]
 
         # data_df = pd.DataFrame([data_dict])
