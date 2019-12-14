@@ -33,85 +33,80 @@ def index():
         
         req = request.form
 
-        industry_partner = req['industry_partner']
-        client_id = req['client_id']
-        travel_no = req['travel_no']
-        dt = req['dt']
-        project_name = req['project_name']
-        project_id = req['project_id']
-        contract_task_order = req['contract_task_order']
+        Industry_Partner = req['industry_partner']
+        Client_Id = req['client_id']
+        Version_Date = req['version_date']
+        Travel_No = req['travel_no']
+        Dt = req['dt']
+        Project_Name = req['project_name']
+        Project_ID_IA_No = req['project_id']
+        Contract_Task_Order = req['contract_task_order']
         
-        from_requestor = req['from_requestor']
-        through = req['client_id']
-        try:
-            funding_stream = req.get('funding_stream')
-            # if funding_stream!=None:
-            #     funding_stream = funding_stream
-            # else:
-            #     funding_stream = 'error'
-        except:
-            funding_stream = "didn't work"
-        subject_id = req['subject_id']
-        cum_amt_billed = req['cum_amt_billed']
-        cum_amt_billed_balance = req['cum_amt_billed_balance']
-        estimate = req['estimate']
-        estimate_balance = req['estimate_balance']
+        From_Requestor = req['from_requestor']
+        Through = req['client_id']
+        Funding_Stream = req.get('funding_stream')
+        Subject_ID = req['subject_id']
+        Cum_Amt_Billed = req['cum_amt_billed']
+        Cum_Amt_Billed_Balance = req['cum_amt_billed_balance']
+        Estimate = req['estimate']
+        Estimate_Balance = req['estimate_balance']
 
-        client_poc = req['client_poc']
-        id_project_mgr = req['id_project_mgr']
-        travel_justification = req['travel_justification']
-        first_name = req['first_name']
-        middle_name = req['middle_name']
-        last_name = req['last_name']
-        company = req['company']
-        sub_company_poc_name = req['sub_company_poc_name']
-        sub_company_address = req['sub_company_address']
-        sub_company_city = req['sub_company_city']
-        sub_company_phone = req['sub_company_phone']
-        sub_company_email = req['sub_company_email']
-        sub_company_po = req['sub_company_po']
+        Client_POC = req['client_poc']
+        ID_Project_Mgr = req['id_project_mgr']
+        Travel_Justification = req['travel_justification']
+        First_Name = req['first_name']
+        Middle_Name = req['middle_name']
+        Last_Name = req['last_name']
+        Company = req['company']
+        Sub_Company_POC_Name = req['sub_company_poc_name']
+        Sub_Company_Address = req['sub_company_address']
+        Sub_Company_City = req['sub_company_city']
+        Sub_Company_Phone = req['sub_company_phone']
+        Sub_Company_email = req['sub_company_email']
+        Sub_Company_PO = req['sub_company_po']
         
-        birth_date = req['birth_date']
-        place_of_birth = req['place_of_birth']
-        ssn = req['ssn']
-        dod_id = req['dod_id']
-        passport_no = req['passport_no']
-        passport_expiration = req['passport_expiration']
-        employee_id = req['employee_id']
-        date_hired = req['date_hired']
-        position_type = req['position_type']
-        primary_phone = req['primary_phone']
-        primary_email = req['primary_email']
-        secondary_email = req['secondary_email']
-        task_id = req['task_id']
-        manager = req['manager']
-        oy2_po_code = req['oy2_po_code']
-        oy2_org_code = req['oy2_org_code']
-        oy2_project_string = req['oy2_project_string']
-        plc_code = req['plc_code']
-        nok_date = req['nok_date']
-        fsde_sheet_date = req['fsde_sheet_date']
-        deployment_start_date = req['deployment_start_date']
-        deployment_end_date = req['deployment_end_date']
-        leave_start_date = req['leave_start_date']
-        leave_end_date = req['leave_end_date']
-        mil_leave_start_date = req['mil_leave_start_date']
-        mil_leave_end_date = req['mil_leave_end_date']
+        Birth_Date = req['birth_date']
+        Place_Of_Birth = req['place_of_birth']
+        SSN = req['ssn']
+        DOD_ID = req['dod_id']
+        Passport_No = req['passport_no']
+        Passport_Expiration = req['passport_expiration']
+        Employee_ID = req['employee_id']
+        Date_Hired = req['date_hired']
+        Position_Type = req['position_type']
+        Primary_Phone = req['primary_phone']
+        Secondary_Phone = req['primary_phone']
+        Primary_Email = req['primary_email']
+        Secondary_Email = req['secondary_email']
+        Task_ID = req['task_id']
+        Manager = req['manager']
+        OY2_PO_CODE = req['oy2_po_code']
+        OY2_Org_Code = req['oy2_org_code']
+        OY2_Project_String = req['oy2_project_string']
+        PLC_Code = req['plc_code']
+        NOK_Date = req['nok_date']
+        FSDE_Sheet_Date = req['fsde_sheet_date']
+        Deployment_Start_Date = req['deployment_start_date']
+        Deployment_End_Date = req['deployment_end_date']
+        Leave_Start_Date = req['leave_start_date']
+        Leave_End_Date = req['leave_end_date']
+        Mil_Leave_Start_Date = req['mil_leave_start_date']
+        Mil_Leave_End_State = req['mil_leave_end_date']
         
-        ditac = req['ditac']
-        sis = req['sis']
-        ftp = req['ftp']
-        jasa = req['jasa']
-        dst_osint = req['dst_osint']
-        proton = req['proton']
-        fmv_academy = req['fmv_academy']
+        DITAC = req['ditac']
+        SIS = req['sis']
+        FTP = req['ftp']
+        JASA = req['jasa']
+        DST_OSINT = req['dst_osint']
+        PROTON = req['proton']
+        FMV_Academy = req['fmv_academy']
         
-        ccmsubmit = req['ccmsubmit']
-        ci_brief = req['ci_brief']
-        visa_submitted = req['visa_submitted']
-        src_date = req['src_date']
-        src_travel_submission = req['src_travel_submission']
-        deployment_travel_submission = req['deployment_travel_submission']
+        CCM_Submit = req['ccmsubmit']
+        CI_Brief = req['ci_brief']
+        Visa_Submitted = req['visa_submitted']
+        SRC_Date = req['src_date']
+        SRC_Travel_Submission = req['src_travel_submission']
+        Deployment_Travel_Submission = req['deployment_travel_submission']
 
         # cur = mysql.connection.cursor()
         # cur.execute ("INSERT INTO MyUsers(first_name, last_name) VALUES (%s, %s)")
@@ -119,90 +114,101 @@ def index():
         # cur.close()
         
         client_dict = {
-            'industry_partner':industry_partner,
-            'client_id':client_id,
-            'travel_no':travel_no,
-            'dt':dt,
-            'project_name':project_name,
-            'project_id':project_id,
-            'contract_task_order':contract_task_order
+            'Employee_ID':employee_id,
+            'Task_ID':task_id,
+            'Industry_Partner':industry_partner,
+            'Client_Id':client_id,
+            'Version_Date':version_date,
+            'Travel_No':travel_no,
+            'Dt':dt,
+            'Project_Name':project_name,
+            'Project_ID_IA_No':project_id,
+            'Contract_Task_Order':contract_task_order
             }
         
         tpoc_dict = {
-            'from_requestor':from_requestor,
-            'through':through,
-            'funding_stream':funding_stream,
-            'subject_id':subject_id,
-            'cum_amt_billed':cum_amt_billed,
-            'cum_amt_billed_balance':cum_amt_billed_balance,
-            'estimate':estimate,
-            'estimate_balance':estimate_balance
+            'From_Requestor':from_requestor,
+            'Through':through,
+            'Funding_Stream':funding_stream,
+            'Subject_ID':subject_id,
+            'Cum_Amt_Billed':cum_amt_billed,
+            'Cum_Amt_Billed_Balance':cum_amt_billed_balance,
+            'Estimate':estimate,
+            'Estimate_Balance':estimate_balance,
+            'Employee_ID':employee_id
         }
 
         traveler_dict = {
-            'client_poc':client_poc,
-            'id_project_mgr':id_project_mgr,
-            'travel_justification':travel_justification,
-            'first_name':first_name,
-            'middle_name':middle_name,
-            'last_name':last_name,
-            'company':company,
-            'sub_company_poc_name':sub_company_poc_name,
-            'sub_company_address':sub_company_address,
-            'sub_company_city':sub_company_city,
-            'sub_company_phone':sub_company_phone,
-            'sub_company_email':sub_company_email,
-            'sub_company_po':sub_company_po,
+            'Employee_ID':employee_id,
+            'Client_POC':client_poc,
+            'ID_Project_Mgr':id_project_mgr,
+            'Travel_Justification':travel_justification,
+            'Last_Name':last_name,
+            'First_Name':first_name,
+            'Company':company,
+            'Sub_Company_POC_Name':sub_company_poc_name,
+            'Sub_Company_Address':sub_company_address,
+            'Sub_Company_City':sub_company_city,
+            'Sub_Company_Phone':sub_company_phone,
+            'Sub_Company_email':sub_company_email,
+            'Sub_Company_PO':sub_company_po,
         }
 
         employee_dict = {
-            'birth_date':birth_date,
-            'place_of_birth':place_of_birth,
-            'ssn':ssn,
-            'dod_id':dod_id,
-            'passport_no':passport_no,
-            'passport_expiration':passport_expiration,
-            'employee_id':employee_id,
-            'date_hired':date_hired,
-            'position_type':position_type,
-            'primary_phone':primary_phone,
-            'primary_email':primary_email,
-            'secondary_email':secondary_email,
-            'task_id':task_id,
-            'manager':manager,
-            'oy2_po_code':oy2_po_code,
-            'oy2_org_code':oy2_org_code,
-            'oy2_project_string':oy2_project_string,
-            'plc_code':plc_code,
-            'nok_date':nok_date,
-            'fsde_sheet_date':fsde_sheet_date,
-            'deployment_start_date':deployment_start_date,
-            'deployment_end_date':deployment_end_date,
-            'leave_start_date':leave_start_date,
-            'leave_end_date':leave_end_date,
-            'mil_leave_start_date':mil_leave_start_date,
-            'mil_leave_end_date':mil_leave_end_date
+            'Employee_ID':employee_id,
+            'Task_ID':task_id,
+            'Last_Name':last_name,      
+            'First_Name':first_name,
+            'Middle_Name':middle_name,    
+            'Birth_Date':birth_date,
+            'Place_Of_Birth':place_of_birth,
+            'Company':company,
+            'Date_Hired':date_hired,
+            'OY2_PO_CODE':oy2_po_code,
+            'OY2_Org_Code':oy2_org_code,
+            'NOK_Date':nok_date,
+            'FSDE_Sheet_Date':fsde_sheet_date,
+            'Position_Type':position_type,
+            'Deployment_Start_Date':deployment_start_date,
+            'Deployment_End_Date':deployment_end_date,
+            'Leave_Start_Date':leave_start_date,
+            'Leave_End_Date':leave_end_date,
+            'Mil_Leave_Start_Date':mil_leave_start_date,
+            'Mil_Leave_End_State':mil_leave_end_date
+            'OY2_Project_String':oy2_project_string,
+            'PLC_Code':plc_code,
+            'Manager':manager,
+            'DOD_ID':dod_id,
+            'SSN':ssn,
+            'Primary_Phone':primary_phone,
+            'Secondary_Phone':primary_phone,
+            'Primary_Email':primary_email,
+            'Secondary_Email':secondary_email,
+            'Passport_No':passport_no,
+            'Passport_Expiration':passport_expiration
         }
 
         training_dict = {
-            'ditac':ditac,
-            'sis':sis,
-            'ftp':ftp,
-            'jasa':jasa,
-            'dst_osint':dst_osint,
-            'proton':proton,
-            'fmv_academy':fmv_academy
+            'Employee_ID':employee_id,
+            'DITAC':ditac,
+            'SIS':sis,
+            'FTP':ftp,
+            'JASA':jasa,
+            'DST_OSINT':dst_osint,
+            'PROTON':proton,
+            'FMV_Academy':fmv_academy
         }
 
         task_dict = {
-            'ccmsubmit':ccmsubmit,
-            'ci_brief':ci_brief,
-            'visa_submitted':visa_submitted,
-            'src_date':src_date,
-            'src_travel_submission':src_travel_submission,
-            'deployment_travel_submission':deployment_travel_submission
+            'Employee_ID':employee_id,
+            'Deployment_Start_Date':deployment_start_date,
+            'CCM_Submit':ccmsubmit,
+            'CI_Brief':ci_brief,
+            'Visa_Submitted':visa_submitted,
+            'SRC_Date':src_date,
+            'SRC_Travel_Submission':src_travel_submission,
+            'Deployment_Travel_Submission':deployment_travel_submission
         }
-
 
         tables = [
             client_dict,
