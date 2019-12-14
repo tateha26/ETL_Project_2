@@ -174,7 +174,7 @@ def index():
             'Leave_Start_Date':leave_start_date,
             'Leave_End_Date':leave_end_date,
             'Mil_Leave_Start_Date':mil_leave_start_date,
-            'Mil_Leave_End_State':mil_leave_end_date
+            'Mil_Leave_End_State':mil_leave_end_date,
             'OY2_Project_String':oy2_project_string,
             'PLC_Code':plc_code,
             'Manager':manager,
