@@ -113,110 +113,110 @@ def index():
         # mysql.connection.commit()
         # cur.close()
         
-        client_dict = {
-            'Employee_ID':employee_id,
-            'Task_ID':task_id,
-            'Industry_Partner':industry_partner,
-            'Client_Id':client_id,
-            'Version_Date':version_date,
-            'Travel_No':travel_no,
-            'Dt':dt,
-            'Project_Name':project_name,
-            'Project_ID_IA_No':project_id,
-            'Contract_Task_Order':contract_task_order
+        client_info_fed = {
+            'Employee_ID':Employee_ID,
+            'Task_ID':Task_ID,
+            'Industry_Partner':Industry_Partner,
+            'Client_Id':Client_Id,
+            'Version_Date':Version_Date,
+            'Travel_No':Travel_No,
+            'Dt':Dt,
+            'Project_Name':Project_Name,
+            'Project_ID_IA_No':Project_ID_IA_No,
+            'Contract_Task_Order':Contract_Task_Order
             }
         
-        tpoc_dict = {
-            'From_Requestor':from_requestor,
-            'Through':through,
-            'Funding_Stream':funding_stream,
-            'Subject_ID':subject_id,
-            'Cum_Amt_Billed':cum_amt_billed,
-            'Cum_Amt_Billed_Balance':cum_amt_billed_balance,
-            'Estimate':estimate,
-            'Estimate_Balance':estimate_balance,
-            'Employee_ID':employee_id
+        tpoc_info_fed = {
+            'From_Requestor':From_Requestor,
+            'Through':Through,
+            'Funding_Stream':Funding_Stream,
+            'Subject_ID':Subject_ID,
+            'Cum_Amt_Billed':Cum_Amt_Billed,
+            'Cum_Amt_Billed_Balance':Cum_Amt_Billed_Balance,
+            'Estimate':Estimate,
+            'Estimate_Balance':Estimate_Balance,
+            'Employee_ID':Employee_ID
         }
 
-        traveler_dict = {
-            'Employee_ID':employee_id,
-            'Client_POC':client_poc,
-            'ID_Project_Mgr':id_project_mgr,
-            'Travel_Justification':travel_justification,
-            'Last_Name':last_name,
-            'First_Name':first_name,
-            'Company':company,
-            'Sub_Company_POC_Name':sub_company_poc_name,
-            'Sub_Company_Address':sub_company_address,
-            'Sub_Company_City':sub_company_city,
-            'Sub_Company_Phone':sub_company_phone,
-            'Sub_Company_email':sub_company_email,
-            'Sub_Company_PO':sub_company_po,
+        traveler_info_fed = {
+            'Employee_ID':Employee_ID,
+            'Client_POC':Client_POC,
+            'ID_Project_Mgr':ID_Project_Mgr,
+            'Travel_Justification':Travel_Justification,
+            'Last_Name':Last_Name,
+            'First_Name':First_Name,
+            'Company':Company,
+            'Sub_Company_POC_Name':Sub_Company_POC_Name,
+            'Sub_Company_Address':Sub_Company_Address,
+            'Sub_Company_City':Sub_Company_City,
+            'Sub_Company_Phone':Sub_Company_Phone,
+            'Sub_Company_email':Sub_Company_email,
+            'Sub_Company_PO':Sub_Company_PO,
         }
 
-        employee_dict = {
-            'Employee_ID':employee_id,
-            'Task_ID':task_id,
-            'Last_Name':last_name,      
-            'First_Name':first_name,
-            'Middle_Name':middle_name,    
-            'Birth_Date':birth_date,
-            'Place_Of_Birth':place_of_birth,
-            'Company':company,
-            'Date_Hired':date_hired,
-            'OY2_PO_CODE':oy2_po_code,
-            'OY2_Org_Code':oy2_org_code,
-            'NOK_Date':nok_date,
-            'FSDE_Sheet_Date':fsde_sheet_date,
-            'Position_Type':position_type,
-            'Deployment_Start_Date':deployment_start_date,
-            'Deployment_End_Date':deployment_end_date,
-            'Leave_Start_Date':leave_start_date,
-            'Leave_End_Date':leave_end_date,
-            'Mil_Leave_Start_Date':mil_leave_start_date,
-            'Mil_Leave_End_State':mil_leave_end_date,
-            'OY2_Project_String':oy2_project_string,
-            'PLC_Code':plc_code,
-            'Manager':manager,
-            'DOD_ID':dod_id,
-            'SSN':ssn,
-            'Primary_Phone':primary_phone,
-            'Secondary_Phone':primary_phone,
-            'Primary_Email':primary_email,
-            'Secondary_Email':secondary_email,
-            'Passport_No':passport_no,
-            'Passport_Expiration':passport_expiration
+        fsde_employees_df = {
+            'Employee_ID':Employee_ID,
+            'Task_ID':Task_ID,
+            'Last_Name':Last_Name,      
+            'First_Name':First_Name,
+            'Middle_Name':Middle_Name,    
+            'Birth_Date':Birth_Date,
+            'Place_Of_Birth':Place_Of_Birth,
+            'Company':Company,
+            'Date_Hired':Date_Hired,
+            'OY2_PO_CODE':OY2_PO_CODE,
+            'OY2_Org_Code':OY2_Org_Code,
+            'NOK_Date':NOK_Date,
+            'FSDE_Sheet_Date':FSDE_Sheet_Date,
+            'Position_Type':Position_Type,
+            'Deployment_Start_Date':Deployment_Start_Date,
+            'Deployment_End_Date':Deployment_End_Date,
+            'Leave_Start_Date':Leave_Start_Date,
+            'Leave_End_Date':Leave_End_Date,
+            'Mil_Leave_Start_Date':Mil_Leave_Start_Date,
+            'Mil_Leave_End_State':Mil_Leave_End_State,
+            'OY2_Project_String':OY2_Project_String,
+            'PLC_Code':PLC_Code,
+            'Manager':Manager,
+            'DOD_ID':DOD_ID,
+            'SSN':SSN,
+            'Primary_Phone':Primary_Phone,
+            'Secondary_Phone':Secondary_Phone,
+            'Primary_Email':Primary_Email,
+            'Secondary_Email':Secondary_Email,
+            'Passport_No':Passport_No,
+            'Passport_Expiration':Passport_Expiration
         }
 
-        training_dict = {
-            'Employee_ID':employee_id,
-            'DITAC':ditac,
-            'SIS':sis,
-            'FTP':ftp,
-            'JASA':jasa,
-            'DST_OSINT':dst_osint,
-            'PROTON':proton,
-            'FMV_Academy':fmv_academy
+        employee_training = {
+            'Employee_ID':Employee_ID,
+            'DITAC':DITAC,
+            'SIS':SIS,
+            'FTP':FTP,
+            'JASA':JASA,
+            'DST_OSINT':DST_OSINT,
+            'PROTON':PROTON,
+            'FMV_Academy':FMV_Academy
         }
 
-        task_dict = {
-            'Employee_ID':employee_id,
-            'Deployment_Start_Date':deployment_start_date,
-            'CCM_Submit':ccmsubmit,
-            'CI_Brief':ci_brief,
-            'Visa_Submitted':visa_submitted,
-            'SRC_Date':src_date,
-            'SRC_Travel_Submission':src_travel_submission,
-            'Deployment_Travel_Submission':deployment_travel_submission
+        pre_deployment_tasks = {
+            'Employee_ID':Employee_ID,
+            'Deployment_Start_Date':Deployment_Start_Date,
+            'CCM_Submit':CCM_Submit,
+            'CI_Brief':CI_Brief,
+            'Visa_Submitted':Visa_Submitted,
+            'SRC_Date':SRC_Date,
+            'SRC_Travel_Submission':SRC_Travel_Submission,
+            'Deployment_Travel_Submission':Deployment_Travel_Submission
         }
 
         tables = [
-            client_dict,
-            tpoc_dict,
-            traveler_dict,
-            employee_dict,
-            training_dict,
-            task_dict
+            client_info_fed,
+            tpoc_info_fed,
+            traveler_info_fed,
+            fsde_employees_df,
+            employee_training,
+            pre_deployment_tasks
         ]
 
         # data_df = pd.DataFrame([data_dict])
