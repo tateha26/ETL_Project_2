@@ -113,8 +113,6 @@ def index():
         src_travel_submission = req['src_travel_submission']
         deployment_travel_submission = req['deployment_travel_submission']
 
-
-
         # cur = mysql.connection.cursor()
         # cur.execute ("INSERT INTO MyUsers(first_name, last_name) VALUES (%s, %s)")
         # mysql.connection.commit()
