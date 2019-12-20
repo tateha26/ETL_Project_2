@@ -15,10 +15,10 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="100" style="background-color: ghostwhite; position: relative;">
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
 
   <ul class="navbar-nav mr-auto">
-    <li class="nav-brand" style="color: ghostwhite; font-size: larger;">
+    <li class="nav-brand " style="color: rgb(80, 80, 80); background-color: ghostwhite; font-size: x-large; font-weight: bolder; padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px;">
       Travel Authorization Request
     </li>
   </ul>
@@ -28,7 +28,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto active">
+    <ul class="navbar-nav mr-auto active" style="padding-left: 30px;">
       <li class="nav-item">
         <a class="nav-link" href="#client_info_fed">Client</a>
       </li>
@@ -43,6 +43,11 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#employee_training-pre_deployment_tasks">Training/Tasks</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/report">View Submitted Requests</a>
       </li>
     </ul>
   </div>

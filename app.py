@@ -14,10 +14,18 @@ import pymysql
 import pandas as pd
 
 # import JSON
-import json
+# import json
+
+# import OS
+import os
 
 # import config files
-from config import remote_gwsis_dbuser, remote_gwsis_dbpwd, remote_db_endpoint, remote_db_port, remote_gwsis_dbname
+# from config import remote_gwsis_dbuser, remote_gwsis_dbpwd, remote_db_endpoint, remote_db_port, remote_gwsis_dbname
+remote_gwsis_dbuser = os.environ.get("remote_gwsis_dbuser")
+remote_gwsis_dbpwd = os.environ.get("remote_gwsis_dbpwd")
+remote_db_endpoint = os.environ.get("remote_db_endpoint")
+remote_db_port = os.environ.get("remote_db_port")
+remote_gwsis_dbname = os.environ.get("remote_gwsis_dbname")
 
 # configure MySQL connection
 pymysql.install_as_MySQLdb()
@@ -253,11 +261,67 @@ def process_form_data():
     return render_template('success.html', employee_id=Employee_ID)
 
 
-# @app.route('/report', methods=['GET','POST'])
-# def process_form_data():
+@app.route('/report')
+def report():
     
-#     # start session
-#     session = Session(engine)
+    # start session
+    session = Session(engine)
+
+    try:
+        # # query for all records
+        # records = session.query(
+        #     Employee.Record_Number,
+        #     Employee.Employee_ID,
+        #     Employee.Last_Name,
+        #     Employee.First_Name,
+        #     Employee.Company,
+        #     Client.Travel_No,
+        #     Client.Project_Name,
+        #     Client.Project_ID_IA_No,
+        #     Client.Contract_Task_Order,
+        #     Client.Dt
+        #     ).all()
+
+        records = session.execute("SELECT\
+                fsde_employees_df.Record_Number,\
+                fsde_employees_df.Employee_ID,\
+                fsde_employees_df.Last_Name,\
+                fsde_employees_df.First_Name,\
+                fsde_employees_df.Company,\
+                client_info_fed.Travel_No,\
+                client_info_fed.Project_Name,\
+                client_info_fed.Project_ID_IA_No,\
+                client_info_fed.Contract_Task_Order,\
+                client_info_fed.Dt\
+            FROM fsde_employees_df\
+            JOIN client_info_fed \
+            ON fsde_employees_df.Record_Number = client_info_fed.Record_Number")
+
+        # # end session
+        session.close()
+
+        record_list = []
+
+        for a,b,c,d,e,f,g,h,i,j in records:
+            record_dict = {}
+            record_dict['Record Number'] = a
+            record_dict['Employee ID'] = b
+            record_dict['Employee Last Name'] = c
+            record_dict['Employee First Name'] = d
+            record_dict['Company'] = e
+            record_dict['Travel #'] = f
+            record_dict['Project Name'] = g
+            record_dict['Project ID/IA #'] = h
+            record_dict['Contract/Task Order'] = i
+            record_dict['Date'] = j
+            record_list.append(record_dict)
+
+        print(records)
+    
+    except Exception as e:
+        print(e)
+    
+    return render_template('report.html', records=record_list)
 
 
 if __name__ == '__main__':
