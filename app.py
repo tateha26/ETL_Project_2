@@ -304,16 +304,16 @@ def report():
 
         for a,b,c,d,e,f,g,h,i,j in records:
             record_dict = {}
-            record_dict['Record Number'] = a
-            record_dict['Employee ID'] = b
-            record_dict['Employee Last Name'] = c
-            record_dict['Employee First Name'] = d
-            record_dict['Company'] = e
-            record_dict['Travel #'] = f
-            record_dict['Project Name'] = g
-            record_dict['Project ID/IA #'] = h
-            record_dict['Contract/Task Order'] = i
-            record_dict['Date'] = j
+            record_dict['01_Record_Number'] = a
+            record_dict['02_Employee_ID'] = b
+            record_dict['03_Employee_Last_Name'] = c
+            record_dict['04_Employee_First_Name'] = d
+            record_dict['05_Company'] = e
+            record_dict['06_Travel_#'] = f
+            record_dict['07_Project_Name'] = g
+            record_dict['08_Project_ID/IA_#'] = h
+            record_dict['09_Contract/Task_Order'] = i
+            record_dict['10_Date'] = j
             record_list.append(record_dict)
 
         print(records)
